@@ -1,0 +1,28 @@
+volumes:
+  db-store:
+
+services:
+  mysql:
+    image: mysql:8.2.0
+    ports:
+      - 3306:3306
+    volumes:
+      - db-store:/var/lib/mysql
+      - ./docker/mysql/initdb.d:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: user01
+      MYSQL_PASSWORD: pass01
+      MYSQL_DATABASE: express
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:5.2.1
+    platform: linux/amd64
+    ports:
+      - 8080:80
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_USER: user01
+      PMA_PASSWORD: pass01
