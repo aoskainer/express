@@ -1,8 +1,8 @@
-const express = require("express");
-const config = require("config");
+import express from "express";
+import config from "config";
 
 const app = express();
-const port = config.get("server.port") || 3000;
+const port: number = config.get("server.port") || 3000;
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
