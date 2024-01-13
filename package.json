@@ -1,0 +1,8 @@
+{
+  "name": "express",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/aoskainer/express.git",
+  "author": "aoskainer",
+  "license": "MIT"
+}
