@@ -1,6 +1,7 @@
 import express from "express";
 import methodOverride from "method-override";
 import config from "config";
+import logger from "./logger";
 import router from "./routes";
 import { ErrorHandlingMiddleware, RequestLoggingMiddleware } from "./middleware";
 
@@ -24,5 +25,5 @@ app.use(methodOverride());
 app.use(ErrorHandlingMiddleware);
 
 app.listen(port, () => {
-  console.log(`Web Server started: http://localhost:${port}`);
+  logger.info(`Web Server started: http://localhost:${port}`);
 });
