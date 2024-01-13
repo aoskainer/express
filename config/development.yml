@@ -4,3 +4,6 @@ database:
   user: user01
   password: pass01
   database: express
+
+logger:
+  level: debug
